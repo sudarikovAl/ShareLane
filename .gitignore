@@ -1,0 +1,8 @@
+# Project eclude paths
+# Intellij
+/.idea/
+*.iml
+*.iws
+
+# Maven
+/target/
