@@ -27,7 +27,7 @@ public class SignUpTest {
         driver.findElement(By.name("zip_code")).sendKeys("");/*Ищем элемент зип код и вводим в это поле пустое значение*/
         driver.findElement(By.cssSelector("input[value='Continue']")).click();/* после ввода зип кода найти элемент континуе и кликнуть по нему*/
         /*проверка что невалидное значение привело к ожидаемой ошибке*/
-        assertTrue(driver.findElement(By.cssSelector("span[class='error_message']")).isDisplayed(), "перепиши тест");/* после ввода зип кода найти элемент континуе и кликнуть по нему*/
+        assertTrue(driver.findElement(By.cssSelector("span[class='error_message']")).isDisplayed(), "перепиши тест");/* после клика по continue проверяем что отобразилось сообщение error message*/
 
         /*Второй тест на валидное значение 12345 в поле зип код*/
         driver.get("https://www.sharelane.com/cgi-bin/register.py");/* Переходим на zip code page*/
@@ -42,7 +42,7 @@ public class SignUpTest {
         driver.findElement(By.name("zip_code")).sendKeys("<script>alert('XSS');</script>");/*Ищем элемент зип код и вводим в это поле инъекцию*/
         driver.findElement(By.cssSelector("input[value='Continue']")).click();/* после ввода зип кода найти элемент континуе и кликнуть по нему*/
         /*проверка что невалидное значение привело к ожидаемой ошибке*/
-        assertTrue(driver.findElement(By.cssSelector("span[class='error_message']")).isDisplayed(), "перепиши тест");/* после ввода зип кода найти элемент континуе и кликнуть по нему*/
+        assertTrue(driver.findElement(By.cssSelector("span[class='error_message']")).isDisplayed(), "перепиши тест");/* после клика по continue проверяем что отобразилось сообщение error message*/
 
 
 
