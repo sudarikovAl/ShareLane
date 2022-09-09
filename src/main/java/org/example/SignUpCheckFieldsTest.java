@@ -1,18 +1,14 @@
 package org.example;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class SignUpCheckFieldsTest {
+public class SignUpCheckFieldsTest extends BaseTest {
     @Test
     public void CheckInputField() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver"); /*просетать в системные пропети хромдрайвер и определить путь к нему*/
-        WebDriver driver = new ChromeDriver(); /*ОБъявить переменную вебдрайвер для последующейго взаимодействия с браузером хром*/
 
         /*Тест на наличие полей ввода  First Name, Last Name, Email, Password, Confirm Password и на регистрацию при валидных значениях*/
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");/* Переходим на SignUp page*/
@@ -106,4 +102,6 @@ public class SignUpCheckFieldsTest {
 
 
     }
+
+
 }
